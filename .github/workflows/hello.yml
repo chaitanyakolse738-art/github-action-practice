@@ -28,10 +28,6 @@ jobs:
       - name: Print Runner OS
         run: echo "OS is $RUNNER_OS"
 
-      - name: Force Exit Failure
-        run: |
-          echo "Failing the pipeline intentionally..."
-          exit 0
-
+      
 
   
