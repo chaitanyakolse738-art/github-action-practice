@@ -14,3 +14,6 @@ jobs:
 
       - name: Print Hello World
         run: echo "Hello from GitHub Actions!"
+
+      - name: current date & time
+        run: echo "$(date "+%Y-%m-%d %H:%M:%S")"
