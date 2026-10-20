@@ -25,6 +25,8 @@ jobs:
       - name: List files in the repository
         run: ls -R ${{ github.workspace }}
 
+      - name: Print Runner OS
+        run: echo "OS is $RUNNER_OS"
 
-      - name: List files in the repository
-        run: ls -R ${{ github.workspace }}
+
+  
