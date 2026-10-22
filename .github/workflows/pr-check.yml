@@ -16,4 +16,4 @@ jobs:
         run: echo "pr check running for branch ${{ github.head_ref }}"
 
       - name: print date
-        run: date    
+        run: date
