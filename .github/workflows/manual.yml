@@ -1,4 +1,4 @@
-name: Hello workflow
+name: environment workflow
 
 on:
   workflow_dispatch:
