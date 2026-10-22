@@ -15,4 +15,5 @@ jobs:
       - name: pr running message
         run: echp "pr check running for branch ${{ github.head_ref }}"
 
-    
+      - name: print date
+        run: date    
