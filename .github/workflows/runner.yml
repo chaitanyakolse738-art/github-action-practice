@@ -15,7 +15,7 @@ jobs:
         run: hostname
 
       - name: Current user running the job
-        run: echo "current user is ${{ github.actor }}"
+        run: whoami
 
 
   windows:
@@ -29,7 +29,7 @@ jobs:
         run: hostname
 
       - name: Current user running the job
-        run: echo "current user is ${{ github.actor }}"
+        run: whoami
 
 
   mac:
@@ -42,5 +42,5 @@ jobs:
       - name: Show System Hostname
         run: hostname
 
-      - name: Current user running the job
-        run: echo "current user is ${{ github.actor }}"
+      - name: current user running the job
+        run: whoami
