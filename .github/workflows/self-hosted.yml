@@ -30,6 +30,7 @@ jobs:
           echo "SUCESS: file exist"
           else
           echo "FAILURE : not exist"    
+          fi
 
 
 
