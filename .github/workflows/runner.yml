@@ -27,7 +27,8 @@ jobs:
         run: node --version
 
       - name: Git version 
-        run: Git --version
+        run: git version
+        
       
 
 
