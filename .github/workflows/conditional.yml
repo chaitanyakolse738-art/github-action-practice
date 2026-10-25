@@ -1,7 +1,8 @@
 name: conditional workflow
 
 on:
-    workflow_dispatch:
+    push:
+        branches: [main, pr-check-demo]
 
 jobs:
     condition:
