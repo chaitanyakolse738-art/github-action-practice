@@ -2,7 +2,6 @@ name: conditional workflow
 
 on:
     push:
-        branches: [main, pr-check-demo]
 
 jobs:
     condition:
