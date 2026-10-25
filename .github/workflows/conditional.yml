@@ -14,7 +14,8 @@ jobs:
 
             - name: fake error
               continue-on-error: true
-              run: exit 1
+              run: exit 1 |
+               echo "contniue on error step added"
 
 
             - name: failuare step
