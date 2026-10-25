@@ -1,7 +1,8 @@
 name: conditional workflow
 
 on:
-    workflow_dispatch:
+    push:
+        branches: [main]
 
 jobs:
     condition:
@@ -15,4 +16,5 @@ jobs:
             - name: failuare step
               if: failure()
               run: echo "priviouse was fail"
+
         
