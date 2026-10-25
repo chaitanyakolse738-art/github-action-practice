@@ -9,7 +9,7 @@ jobs:
 
         steps:
             - name: print message
-              if: github.ref_name == 'dev'
-              run: echo "sucess_dev"
+              if: github.ref_name == 'main'
+              run: echo "main"
 
         
