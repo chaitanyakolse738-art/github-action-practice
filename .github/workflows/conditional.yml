@@ -10,7 +10,7 @@ jobs:
         steps:
             - name: print message
               if: github.ref_name == 'main'
-              run: echo "main//
+              run: echo "this is main"
 
             - name: failuare step
               if: failure()
