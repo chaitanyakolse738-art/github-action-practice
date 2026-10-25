@@ -12,6 +12,11 @@ jobs:
               if: github.ref_name == 'main'
               run: echo "this is main"
 
+            - name: fake error
+              continue-on-error: true
+              run: exit 1
+
+
             - name: failuare step
               if: failure()
               run: echo "priviouse was fail"
