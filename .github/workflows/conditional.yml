@@ -1,0 +1,15 @@
+name: conditional workflow
+
+on:
+    workflow_dispatch:
+
+jobs:
+    condition:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: print message
+              if: github.ref_name == 'dev'
+              run: echo "sucess_dev"
+
+        
