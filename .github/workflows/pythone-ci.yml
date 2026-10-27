@@ -19,7 +19,7 @@ jobs:
           cache: 'pip'
 
       - name: install Depedency
-        run: pip install -r requirement.txt
+        run: pip install -r requirements.txt
 
       - name: run the test
         run: pytest
