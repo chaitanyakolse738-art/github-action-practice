@@ -1,0 +1,25 @@
+name: python-ci-workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: install Depedency
+        run: pip install -r requirement.txt
+
+      - name: run the test
+        run: pytest
