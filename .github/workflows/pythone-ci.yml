@@ -19,6 +19,7 @@ jobs:
           cache: 'pip'
 
       - name: install Depedency
+        working-directory: python
         run: pip install -r requirements.txt
 
       - name: run the test
