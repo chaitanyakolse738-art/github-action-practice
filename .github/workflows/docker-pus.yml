@@ -1,8 +1,7 @@
 name: CI Build and Push Static
 
 on:
-  push:
-    branches: [ "main" ]
+  push
 
 jobs:
   build-and-push:
