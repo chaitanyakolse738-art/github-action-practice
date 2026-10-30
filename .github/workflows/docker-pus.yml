@@ -22,6 +22,7 @@ jobs:
         with:
           context: ./app
           push: true
-          tags: chaitanya057/my-static-app:latest
-                chaitanya057/my-static-app:83c04dd
+          tags: | 
+            chaitanya057/my-static-app:latest
+            chaitanya057/my-static-app:83c04dd
 
