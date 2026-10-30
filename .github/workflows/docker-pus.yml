@@ -2,7 +2,7 @@ name: CI Build and Push Static
 
 on:
   push:
-    branches: [ "main" ]
+    braes: [ "main" ]
 
 jobs:
   build-and-push:
