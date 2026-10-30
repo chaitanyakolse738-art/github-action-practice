@@ -25,7 +25,7 @@ jobs:
 
       - name: Push Docker Image
         if: github.ref == 'refs/heads/main'
-        run: docker push username/my-image:latest
+        run: docker push username/my-static-app:latest
 
 
 
