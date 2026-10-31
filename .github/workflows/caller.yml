@@ -10,6 +10,7 @@ jobs:
     name: calling the reusable
     uses: ./.github/workflows/reusable.yml
     with:
-     environment: 'production'
+      app_name: github-action-practice
+      environment: 'production'
     secrets:
-        API_TOKEN: ${{ secrets.DOKCERHUB_TOKEN }}
+      API_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
