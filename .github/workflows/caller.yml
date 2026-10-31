@@ -14,3 +14,14 @@ jobs:
       environment: 'production'
     secrets:
       API_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  version-print:
+    needs: caller-shared-logic
+    runs-on: ubuntu-latest
+
+
+    
+    steps:
+      - name: print build version with built sha
+        run: |
+          echo "The version passed from the reusable workflow is: ${{ needs.caller-shared-logic.outputs.version }}"
