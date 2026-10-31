@@ -1,0 +1,15 @@
+name: caller-workflow
+
+on:
+  push:
+    branches: [main] 
+
+
+jobs:
+  caller-shared-logic:
+    name: calling the reusable
+    uses: ./.github/workflows/reusable.yml
+    with:
+     environment: 'production'
+    secrets:
+        API_TOKEN: ${{ secrets.DOKCERHUB_TOKEN }}

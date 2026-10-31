@@ -22,6 +22,6 @@ jobs:
       - name: print message
         run: |
           echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
-          if [ -n "$DOCKERHUB_TOKEN" ]; then
+          if [ -n "$API_TOKEN" ]; then
           echo "true"
           fi
