@@ -3,6 +3,9 @@ name: workflow_call
 on:
   workflow_call:
     inputs:
+      app_name:
+        required: true
+        type: string
       environment:
         required: true
         type: string
@@ -13,15 +16,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      API_TOKEN: ${{ secrets.API_TOKEN }}
 
     steps:
 
       - name: Checkout Code
-        uses: actions/checkout@v4 
+        uses: actions/checkout@v4
 
       - name: print message
         run: |
           echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
           if [ -n "$API_TOKEN" ]; then
-          echo "true"
+            echo "true"
           fi
