@@ -40,5 +40,5 @@ jobs:
       - name: calculate short sha with version
         id: set-sha
         run: |
-          SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
+          SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7) 
           echo "short_sha=v1.0.0-$SHORT_SHA" >> $GITHUB_OUTPUT
