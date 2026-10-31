@@ -1,0 +1,27 @@
+name: workflow_call
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+    secrets:
+      API_TOKEN:
+        required: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4 
+
+      - name: print message
+        run: |
+          echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
+          if [ -n "$DOCKERHUB_TOKEN" ]; then
+          echo "true"
+          fi
