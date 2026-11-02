@@ -1,0 +1,23 @@
+name: Test My Composite Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run My Custom Action
+        id: greeting
+        uses: ./.github/actions/setup-and-greet
+        with:
+          name: Chaitanya
+          language: en
+
+      - name: Check Action Output
+        run: |
+          echo "Greeting completed: ${{ steps.greeting.outputs.greeted }}"

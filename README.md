@@ -1,0 +1,1 @@
+[![CI Build and Push Static](https://github.com/chaitanyakolse738-art/github-action-practice/actions/workflows/docker-pus.yml/badge.svg)](https://github.com/chaitanyakolse738-art/github-action-practice/actions/workflows/docker-pus.yml)
