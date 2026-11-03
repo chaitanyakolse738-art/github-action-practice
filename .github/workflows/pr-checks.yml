@@ -40,3 +40,25 @@ jobs:
           fi
 
           echo "All changed files passed!"
+
+  branch-name-check:
+    name: Validate Branch Name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check branch name
+        env:
+          BRANCH_NAME: ${{ github.head_ref }}
+        shell: bash
+        run: |
+          ALLOWED_PATTERN="^(feature|fix|docs)/[a-zA-Z0-9._-]+$"
+
+          echo "Checking branch: $BRANCH_NAME"
+
+          if [[ ! "$BRANCH_NAME" =~ $ALLOWED_PATTERN ]]; then
+            echo "::error::Invalid branch name: $BRANCH_NAME"
+            echo "Allowed formats: feature/*, fix/*, docs/*"
+            exit 1
+          fi
+
+          echo "Branch name is valid!"
