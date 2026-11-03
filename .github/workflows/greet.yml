@@ -21,3 +21,7 @@ jobs:
       - name: Check Action Output
         run: |
           echo "Greeting completed: ${{ steps.greeting.outputs.greeted }}"
+
+
+
+    
