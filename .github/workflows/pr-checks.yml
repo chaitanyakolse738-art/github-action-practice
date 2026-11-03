@@ -1,0 +1,42 @@
+name: PR File Size Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  file-size-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Check file sizes
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          MAX_SIZE=1000000
+          FAILED=0
+
+          while IFS= read -r -d '' file; do
+            if [ -f "$file" ]; then
+              SIZE=$(stat -c%s "$file")
+
+              if [ "$SIZE" -gt "$MAX_SIZE" ]; then
+                echo "ERROR: $file is larger than 1 MB"
+                FAILED=1
+              fi
+            fi
+          done < <(git diff --name-only -z "$BASE_SHA...$HEAD_SHA")
+
+          if [ "$FAILED" -eq 1 ]; then
+            exit 1
+          fi
+
+          echo "All changed files passed!"
