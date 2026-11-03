@@ -40,3 +40,8 @@ jobs:
           fi
 
           echo "All changed files passed!"
+
+      - name: Print changed files
+        run: |
+          echo "Changed files:"
+          
